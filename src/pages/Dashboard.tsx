@@ -5,7 +5,7 @@ import DashboardLayout from "@/components/dashboard-layout";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart, LineChart, PieChart } from "recharts";
+import { Badge } from "@/components/ui/badge";
 import { 
   Code,
   Star,

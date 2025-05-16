@@ -9,7 +9,249 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      messages: {
+        Row: {
+          archived: boolean | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          read: boolean | null
+          subject: string | null
+          user_id: string | null
+        }
+        Insert: {
+          archived?: boolean | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          read?: boolean | null
+          subject?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          archived?: boolean | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          read?: boolean | null
+          subject?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          role: string
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id: string
+          role?: string
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          role?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          created_at: string
+          description: string | null
+          featured: boolean | null
+          id: string
+          image_url: string | null
+          order_index: number | null
+          status: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          featured?: boolean | null
+          id?: string
+          image_url?: string | null
+          order_index?: number | null
+          status?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          featured?: boolean | null
+          id?: string
+          image_url?: string | null
+          order_index?: number | null
+          status?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      settings: {
+        Row: {
+          about_text: string | null
+          contact_email: string | null
+          font_body: string | null
+          font_heading: string | null
+          hero_image: string | null
+          id: string
+          meta_tags: Json | null
+          primary_color: string | null
+          secondary_color: string | null
+          site_description: string | null
+          site_title: string | null
+          social_links: Json | null
+          theme_mode: string | null
+          updated_at: string
+          user_id: string
+          visible_sections: Json | null
+        }
+        Insert: {
+          about_text?: string | null
+          contact_email?: string | null
+          font_body?: string | null
+          font_heading?: string | null
+          hero_image?: string | null
+          id?: string
+          meta_tags?: Json | null
+          primary_color?: string | null
+          secondary_color?: string | null
+          site_description?: string | null
+          site_title?: string | null
+          social_links?: Json | null
+          theme_mode?: string | null
+          updated_at?: string
+          user_id: string
+          visible_sections?: Json | null
+        }
+        Update: {
+          about_text?: string | null
+          contact_email?: string | null
+          font_body?: string | null
+          font_heading?: string | null
+          hero_image?: string | null
+          id?: string
+          meta_tags?: Json | null
+          primary_color?: string | null
+          secondary_color?: string | null
+          site_description?: string | null
+          site_title?: string | null
+          social_links?: Json | null
+          theme_mode?: string | null
+          updated_at?: string
+          user_id?: string
+          visible_sections?: Json | null
+        }
+        Relationships: []
+      }
+      skills: {
+        Row: {
+          category: string
+          created_at: string
+          icon: string | null
+          id: string
+          name: string
+          order_index: number | null
+          proficiency: number | null
+          updated_at: string
+          user_id: string
+          visible: boolean | null
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          icon?: string | null
+          id?: string
+          name: string
+          order_index?: number | null
+          proficiency?: number | null
+          updated_at?: string
+          user_id: string
+          visible?: boolean | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          icon?: string | null
+          id?: string
+          name?: string
+          order_index?: number | null
+          proficiency?: number | null
+          updated_at?: string
+          user_id?: string
+          visible?: boolean | null
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          avatar_url: string | null
+          company: string | null
+          content: string
+          created_at: string
+          id: string
+          name: string
+          order_index: number | null
+          position: string | null
+          updated_at: string
+          user_id: string
+          visible: boolean | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          company?: string | null
+          content: string
+          created_at?: string
+          id?: string
+          name: string
+          order_index?: number | null
+          position?: string | null
+          updated_at?: string
+          user_id: string
+          visible?: boolean | null
+        }
+        Update: {
+          avatar_url?: string | null
+          company?: string | null
+          content?: string
+          created_at?: string
+          id?: string
+          name?: string
+          order_index?: number | null
+          position?: string | null
+          updated_at?: string
+          user_id?: string
+          visible?: boolean | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
