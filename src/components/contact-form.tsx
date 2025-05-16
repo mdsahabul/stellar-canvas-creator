@@ -34,7 +34,14 @@ export function ContactForm() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from('messages').insert([data]);
+      // Fix: Pass a single object rather than an array of objects
+      // Make sure all required fields are included
+      const { error } = await supabase.from('messages').insert({
+        name: data.name,
+        email: data.email,
+        subject: data.subject || null, // Convert undefined to null
+        message: data.message,
+      });
       
       if (error) throw error;
       
