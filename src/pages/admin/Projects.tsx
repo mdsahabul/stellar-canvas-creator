@@ -121,6 +121,11 @@ const ProjectsPage = () => {
   // Create project mutation
   const createMutation = useMutation({
     mutationFn: async (values: ProjectFormValues) => {
+      // Get current user ID from Supabase auth
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) throw new Error("You must be logged in to create a project");
+      
       const { error } = await supabase
         .from('projects')
         .insert({
@@ -130,6 +135,7 @@ const ProjectsPage = () => {
           tags: values.tags,
           status: values.status,
           featured: values.featured,
+          user_id: user.id,
         });
       
       if (error) throw new Error(error.message);
